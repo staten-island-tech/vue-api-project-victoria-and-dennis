@@ -8,3 +8,8 @@ import TheWelcome from '../components/TheWelcome.vue'
     <TheWelcome />
   </main>
 </template>
+
+<script setup>
+import{ref, onMounted} from "vue";
+
+</script>
