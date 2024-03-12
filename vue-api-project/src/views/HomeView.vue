@@ -9,19 +9,18 @@
 import TheWelcome from '../components/TheWelcome.vue'
 
 import{ref, onMounted} from 'vue';
-const toilets=ref('');
+let toilets = ref('');
 async function getData() {
   let res = await fetch("https://data.cityofnewyork.us/resource/hjae-yuav.json");
   let data = await res.json();
-  toilets.value= data.results;
+  console.log(data)
+  toilets.value= data;
 }
 onMounted(()=>{
   getData()
 })
 
-console.log(
-  onMounted()
-)
+  
 </script>
 
 
