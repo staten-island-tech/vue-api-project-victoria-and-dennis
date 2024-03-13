@@ -20,7 +20,7 @@ onMounted(()=>{
   getData()
 })
 
-  import {Bar} from 'vue-chartjs'
+  import {Bar} from '@/components/BarChart.vue'
 </script>
 
 
