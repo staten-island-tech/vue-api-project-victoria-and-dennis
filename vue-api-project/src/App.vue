@@ -1,6 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import ToiletChart from './components/ToiletChart.vue'
+
+
 </script>
 
 <template>
@@ -17,6 +20,9 @@ import HelloWorld from './components/HelloWorld.vue'
     </div>
   </header>
 
+  <div id="app">
+    <ToiletChart/>
+  </div>
   <RouterView />
 </template>
 
