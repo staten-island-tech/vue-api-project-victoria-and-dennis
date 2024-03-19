@@ -1,13 +1,13 @@
 <template>
   <main>
     <h1>Hola</h1>
-    <TheWelcome />
+    <BarChart/>
   </main>
 </template>
 
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
-
+import BarChart from "../components/BarChart.vue"
 import{ref, onMounted} from 'vue';
 let toilets = ref('');
 async function getData() {
@@ -20,7 +20,6 @@ onMounted(()=>{
   getData()
 })
 
-  import {Bar} from '@/components/BarChart.vue'
 </script>
 
 
