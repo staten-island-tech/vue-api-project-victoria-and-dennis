@@ -18,7 +18,7 @@
     data() {
       return {
         chartData: {
-          labels: [ 'January', 'February', 'March' ],
+          labels: [ 'Brooklyn', 'Staten Island', 'Bronx', 'Queens', 'Manhattan' ],
           datasets: [ { data: [40, 20, 12] } ]
         },
         chartOptions: {
