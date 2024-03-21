@@ -1,11 +1,11 @@
 <script setup>
-import ToiletChart from './components/ToiletChart.vue'
+import BarChart from './components/BarChart.vue'
 
 
 </script>
 
 <template>
- <ToiletChart />
+ <BarChart />
 </template>
 
 <style scoped>

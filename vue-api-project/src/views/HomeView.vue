@@ -20,6 +20,8 @@ onMounted(()=>{
   getData()
 })
 
+const props = defineProps({ chartData: Array })
+
 </script>
 
 
