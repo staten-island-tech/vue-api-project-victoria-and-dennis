@@ -19,12 +19,18 @@
       return {
         chartData: {
           labels: [ 'Brooklyn', 'Staten Island', 'Bronx', 'Queens', 'Manhattan' ],
-          datasets: [ { data: [40, 20, 12] } ]
+          datasets: [ { data: [0, 0, 0, 0, 0] } ]
         },
         chartOptions: {
           responsive: true
         }
       }
+    },
+    props:{
+      toilets:Array
+    },
+    if(props.borough === 'Brooklyn'){
+      this. data[0] = this. data[0]+1;
     }
   }
   </script>
