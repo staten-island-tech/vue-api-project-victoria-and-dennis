@@ -20,8 +20,19 @@ onMounted(()=>{
   getData()
 })
 
+const text = {
+  Brooklyn :0,
+  StatenIsland :0,
 
+}
+toilets.value.forEach(element => {
+  if (element.borough === "Brooklyn"){
+    
+    [text.Brooklyn]+1
+  } 
+});
 
+console.log(Brooklyn)
 </script>
 
 
