@@ -18,12 +18,13 @@
     data() {
       return {
         chartData: {
-          labels: [ 'January', 'February', 'March' ],
-          datasets: [ { data: [40, 20, 12] } ]
+          Boroughs: [ 'Brooklyn', 'Staten Island', 'Bronx', 'Queens', 'Manhattan' ],
+          datasets: [ { data: [0, 0, 0, 0, 1] } ]
         },
         chartOptions: {
           responsive: true
         }
+        
       }
     }
   }

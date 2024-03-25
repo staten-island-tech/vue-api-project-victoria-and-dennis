@@ -22,6 +22,14 @@ onMounted(()=>{
 
 const props = defineProps({ chartData: Array })
 
+const Brooklyn = {}
+toilets.forEach(el => {
+  if (el.value.burough === "Brooklyn"){
+    [Brooklyn] + 1
+  }
+})
+
+
 </script>
 
 
