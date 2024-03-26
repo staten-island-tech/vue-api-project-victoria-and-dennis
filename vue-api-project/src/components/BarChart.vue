@@ -1,5 +1,5 @@
 <template>
-    <Bar
+    <PolarArea
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
@@ -7,14 +7,18 @@
   </template>
   
   <script >
-  import { Bar } from 'vue-chartjs'
-  import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+  import { PolarArea } from 'vue-chartjs'
+  import {  Chart as ChartJS,
+  RadialLinearScale,
+  ArcElement,
+  Tooltip,
+  Legend } from 'chart.js'
   
-  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+  ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend)
   
   export default {
-    name: 'BarChart',
-    components: { Bar },
+    name: 'PolarChart',
+    components: { PolarArea },
     data() {
       return {
         chartData: {

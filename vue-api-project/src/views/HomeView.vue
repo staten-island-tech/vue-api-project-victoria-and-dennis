@@ -1,13 +1,13 @@
 <template>
   <main>
     <h1>Hola</h1>
-    <BarChart/>
+    <PolarChart/>
   </main>
 </template>
 
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
-import BarChart from "../components/BarChart.vue"
+import PolarChart from "../components/BarChart.vue"
 import{ref, onMounted} from 'vue';
 let toilets = ref('');
 async function getData() {
@@ -26,6 +26,7 @@ const Brooklyn = {}
 toilets.forEach(el => {
   if (el.value.burough === "Brooklyn"){
     [Brooklyn] + 1
+    
   }
 })
 
