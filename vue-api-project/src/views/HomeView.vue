@@ -24,7 +24,7 @@ const props = defineProps({ chartData: Array })
 
 const Brooklyn = {}
 toilets.forEach(el => {
-  if (el.value.burough === "Brooklyn"){
+  if (el.value.borough === "Brooklyn"){
     [Brooklyn] + 1
     
   }

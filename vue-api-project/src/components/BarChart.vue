@@ -32,5 +32,9 @@
       }
     }
   }
+
+  data.forEach(o => {
+    const borough = object.name
+  })
   </script>
   
