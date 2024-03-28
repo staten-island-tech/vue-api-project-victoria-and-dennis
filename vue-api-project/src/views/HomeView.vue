@@ -8,7 +8,7 @@
 <script setup>
 import PolarChart from "../components/BarChart.vue"
 import{ref, onMounted} from 'vue';
-const toilets = ref('');
+const toilets = ref('getData');
 /* async function getData() {
   let res = await fetch("https://data.cityofnewyork.us/resource/hjae-yuav.json");
   let data = await res.json();
@@ -30,8 +30,8 @@ onMounted(async ()=> {
   console.log("mounted")
   const res = await fetch("https://data.cityofnewyork.us/resource/hjae-yuav.json");
   const data = await res.json();
-  console.log(data);
   toilets.value = data
+  console.log(data);
 })
 </script>
 

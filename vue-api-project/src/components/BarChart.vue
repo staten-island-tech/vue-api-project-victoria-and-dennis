@@ -34,7 +34,7 @@
         
       }
     },
-    mounted(){
+   /*  mounted(){
       this.feces.forEach(toilet => {
         if (toilet.handicap_accessible) {
           this.chartData.datasets[0].data[0]++
@@ -43,7 +43,7 @@
 
         }
       })
-    }
+    } */
   }
 
   </script>
