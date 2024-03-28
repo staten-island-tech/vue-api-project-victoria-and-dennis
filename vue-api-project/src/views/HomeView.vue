@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>Hola</h1>
-    <PolarChart/>
+    <PolarChart :feces="toilets"/>
   </main>
 </template>
 
@@ -16,19 +16,13 @@ async function getData() {
   console.log(data)
   toilets.value= data;
 }
-onMounted(()=>{
-  getData()
+onMounted(async()=>{
+  await getData()
 })
 
 const props = defineProps({ chartData: Array })
 
-const Brooklyn = {}
-toilets.forEach(el => {
-  if (el.value.borough === "Brooklyn"){
-    [Brooklyn] + 1
-    
-  }
-})
+
 
 
 </script>

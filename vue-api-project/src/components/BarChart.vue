@@ -19,22 +19,32 @@
   export default {
     name: 'PolarChart',
     components: { PolarArea },
+    props: {
+      feces:Object
+    },
     data() {
       return {
         chartData: {
-          Boroughs: [ 'Brooklyn', 'Staten Island', 'Bronx', 'Queens', 'Manhattan' ],
-          datasets: [ { data: [0, 0, 0, 0, 1] } ]
+          Boroughs: [ 'Handicap', 'no' ],
+          datasets: [ { data: [0, 0] } ]
         },
         chartOptions: {
           responsive: true
         }
         
       }
+    },
+    mounted(){
+      this.feces.forEach(toilet => {
+        if (toilet.handicap_accessible) {
+          this.chartData.datasets[0].data[0]++
+        } else {
+          this.chartData.datasets[0].data[1]++
+
+        }
+      })
     }
   }
 
-  data.forEach(o => {
-    const borough = object.name
-  })
   </script>
   
