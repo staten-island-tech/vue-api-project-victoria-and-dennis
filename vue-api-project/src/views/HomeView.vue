@@ -1,7 +1,13 @@
 <template>
   <main>
     <h1>Chart</h1>
-    <BarChart :info = "valuee" :test="valuee.Brooklyn" />
+    <BarChart
+     :info = "valuee" 
+     :test="valuee.Brooklyn" 
+     :test2="valuee.StatenIsland" 
+     :test3="valuee.Bronx"
+     :test4="valuee.Queens"
+     :test5="valuee.Manhattan"  />
   </main>
 </template>
 
@@ -32,8 +38,19 @@ onBeforeMount(async ()=>{
    test.forEach(element => {
   if (element.borough === "Brooklyn"){
     valuee.Brooklyn = valuee.Brooklyn+1
-    
-  } 
+     }
+  else if(element.borough === "Staten Island"){
+valuee.StatenIsland = valuee.StatenIsland+1
+  }
+  else if(element.borough === "Bronx"){
+    valuee.Bronx = valuee.Bronx+1
+  }
+  else if(element.borough === "Queens"){
+    valuee.Queens = valuee.Queens+1
+  }
+  else if(element.borough === "Manhattan"){
+    valuee.Manhattan = valuee.Manhattan+1
+  }
 }); 
 loaded = true
 })

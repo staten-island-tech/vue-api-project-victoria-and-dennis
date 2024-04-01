@@ -19,13 +19,17 @@
     components: { Bar },
     props: {
       info:Object,
-      test:Number
+      test:Number,
+      test2:Number,
+      test3:Number,
+      test4:Number,
+      test5:Number
     },
     data() {
       return {
         chartData: {
           labels: [ 'Brooklyn', 'Staten Island', 'Bronx', 'Queens', 'Manhattan' ],
-          datasets: [ { data: [this.test,0,0,0,0] } ]
+          datasets: [ { data: [this.test,this.test2,this.test3,this.test4,this.test5] } ]
         },
         chartOptions: {
           responsive: true
