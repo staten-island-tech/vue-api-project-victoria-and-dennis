@@ -1,11 +1,11 @@
 <script setup>
-import PolarChart from './components/BarChart.vue'
+import DoughnutChart from './components/BarChart.vue'
 
 
 </script>
 
 <template>
- <PolarChart />
+ <DoughnutChart />
 </template>
 
 <style scoped>
