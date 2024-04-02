@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>Chart</h1>
+    <h1>Chart representing Amount of public toilets in each Borough</h1>
     <BarChart
      :info = "valuee" 
      :test="valuee.Brooklyn" 
