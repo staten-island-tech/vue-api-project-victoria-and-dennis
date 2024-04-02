@@ -59,9 +59,11 @@
   import { Doughnut } from 'vue-chartjs';
   
   export default {
-    extends: Doughnut,
+    components: {
+    Doughnut
+  },
     props: {
-      toilets: Object
+      toilets: Array
     },
     data() {
       return {

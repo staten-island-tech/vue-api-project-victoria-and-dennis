@@ -55,6 +55,7 @@ onMounted(async () => {
   const data = await res.json();
   toilets.value = data;
   console.log(data);
+  return data
 })
 </script>
 
