@@ -3,7 +3,7 @@
     <h1>Chart</h1>
     <BarChart
      :info = "valuee" 
-     :test="valuee.Brooklyn" 
+     :testprop="valuee.Brooklyn" 
      :test2="valuee.StatenIsland" 
      :test3="valuee.Bronx"
      :test4="valuee.Queens"
@@ -21,7 +21,7 @@ async function getData() {
   let res = await fetch("https://data.cityofnewyork.us/resource/hjae-yuav.json");
   let data = await res.json();
   
-  toilets= data;
+  const toilets= data;
   console.log(toilets)
   return data
 }
