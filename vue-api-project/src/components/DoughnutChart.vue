@@ -60,7 +60,8 @@
   
   export default {
     components: {
-    Doughnut
+      name: 'DoughnutChart',
+    components: { Doughnut },
   },
     props: {
       toilets: Array
