@@ -1,11 +1,11 @@
 <script setup>
-import DoughnutChart from './components/Doughnut.vue'
+import DoughnutChart from './components/DoughnutChart.vue'
 
 
 </script>
 
 <template>
- <DoughnutChart />
+<RouterView/>
 </template>
 
 <style scoped>
