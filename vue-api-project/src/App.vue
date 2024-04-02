@@ -1,5 +1,5 @@
 <script setup>
-import DoughnutChart from './components/BarChart.vue'
+import DoughnutChart from './components/Doughnut.vue'
 
 
 </script>

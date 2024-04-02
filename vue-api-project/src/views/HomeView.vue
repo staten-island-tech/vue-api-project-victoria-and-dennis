@@ -44,7 +44,7 @@ onMounted(async()=>{
 </template>
 
 <script setup>
-import DoughnutChart from "../components/BarChart.vue"
+import DoughnutChart from "../components/DoughnutChart.vue"
 import { ref, onMounted } from 'vue';
 
 const toilets = ref([]);
