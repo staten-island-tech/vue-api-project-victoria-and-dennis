@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <Doughnut
       id="my-chart-id"
       :options="chartOptions"
@@ -17,38 +17,55 @@
   ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend)
   
   export default {
-    name: 'PolarChart',
-    components: { PolarArea },
+    name: 'DoughnutChart',
+    components: { Doughnut },
     props: {
       feces:Object
     },
     data() {
       return {
-        chartData: {
-          Boroughs: [ 'Handicap', 'no' ],
-          datasets: [ { data: [0, 0] } ]
-        },
+        openCount: 0,
+        notOpenCount: 0,
+        chartData: {},
         chartOptions: {
-          responsive: true
-        }
-        
-      }
+          responsive: true,
+        },
+      };
     },
-     mounted(){
-      this.feces.forEach(toilet => {
-        if (toilet.handicap_accessible) {
-          this.chartData.datasets[0].data[0]++
-        } else {
-          this.chartData.datasets[0].data[1]++
+    created() {
+      this.countOpen();
+      this.createChartData();
+    },
+    methods: {
+      countOpenYearRoundToilets() {
+        this.feces.forEach((toilet) => {
+          if (toilet.open_year_round === 'Yes') {
+            this.openCount++;
+          } else {
+            this.notOpenCount++;
+          }
+        });
+      },
+      createChartData() {
+        this.chartData = {
+          labels: ['Open Year-Round', 'Not Open Year-Round'],
+          datasets: [
+            {
+              data: [this.openCount, this.notOpenCount],
+              backgroundColor: ['#36A2EB', '#FF6384'],
+            },
+          ],
+        };
+      },
+    },
+    mounted() {
+      this.renderChart(this.chartData, this.chartOptions);
+    },
+  };
 
-        }
-      })
-    } 
-  }
+  </script>
 
-  </script> -->
-
-  <template>
+ <!--  <template>
     <div>
       <h2>Toilets Open Year-Round</h2>
       <Doughnut :options="chartOptions" :data="chartData" />
@@ -107,4 +124,4 @@
   };
   </script>
   
-  
+   -->
