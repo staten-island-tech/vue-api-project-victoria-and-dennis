@@ -29,7 +29,7 @@
       return {
         chartData: {
           labels: [ 'Brooklyn', 'Staten Island', 'Bronx', 'Queens', 'Manhattan' ],
-          datasets: [ { data: [this.test,this.test2,this.test3,this.test4,this.test5] } ]
+          datasets: [ { data: [this.Brooklyn,this.StatenIsland,this.Bronx,this.Queens,this.Manhattan] } ]
         },
         chartOptions: {
           responsive: true
