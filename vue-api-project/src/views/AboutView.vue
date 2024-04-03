@@ -53,8 +53,8 @@ async function getData() {
   let res = await fetch("https://data.cityofnewyork.us/resource/hjae-yuav.json");
   let data = await res.json();
   
-  toilets= data;
-  console.log(toilets)
+  const all= data;
+  console.log(all)
   return data
 }
 
