@@ -40,7 +40,7 @@ onBeforeMount(async ()=>{
     valuee.Brooklyn = valuee.Brooklyn+1
      }
   else if(element.borough === "Staten Island"){
-valuee.StatenIsland = valuee.StatenIsland+1
+    valuee.StatenIsland = valuee.StatenIsland+1
   }
   else if(element.borough === "Bronx"){
     valuee.Bronx = valuee.Bronx+1
