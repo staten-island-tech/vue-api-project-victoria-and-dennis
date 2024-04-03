@@ -1,14 +1,14 @@
 <script setup>
-import DoughnutChart from './components/DoughnutChart.vue'
-
+import { RouterLink, RouterView } from 'vue-router'
 
 </script>
 
 <template>
+  
 <RouterView/>
 <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Borough</RouterLink>
+        <RouterLink to="/about">Hours</RouterLink>
       </nav>
 </template>
 

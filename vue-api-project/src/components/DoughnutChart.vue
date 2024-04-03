@@ -51,25 +51,28 @@
   <template>
     <div>
       <h2>Toilets Open Year-Round</h2>
-      <Doughnut :options="chartOptions" :data="chartData" />
+      <!-- <Doughnut :options="chartOptions" :data="chartData" /> -->
+      <Doughnut :options="chartOptions" :data="chartData" v-if="loaded" />
     </div>
   </template>
   
   <script>
   import { Doughnut } from 'vue-chartjs';
+  import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+  
+  ChartJS.register(ArcElement, Tooltip, Legend)
   
   export default {
-    components: {
-      name: 'DoughnutChart',
-    components: { Doughnut },
-  },
+    components: {Doughnut},
     props: {
       toilets: Array
     },
     data() {
       return {
+        loaded:false,
         openYearRoundCount: 0,
         notOpenYearRoundCount: 0,
+        newToilets: [0],
         chartData: {},
         chartOptions: {
           responsive: true,
@@ -77,12 +80,14 @@
       };
     },
     created() {
+      this.newToilets = Array.from(this.toilets)
       this.countOpenYearRoundToilets();
       this.createChartData();
     },
     methods: {
       countOpenYearRoundToilets() {
-        this.toilets.forEach((toilet) => {
+        console.log(this.toilets)
+        this.newToilets.forEach((toilet) => {
           if (toilet.open_year_round === 'Yes') {
             this.openYearRoundCount++;
           } else {
@@ -102,8 +107,11 @@
         };
       },
     },
+    
     mounted() {
-      this.renderChart(this.chartData, this.chartOptions);
+      ChartJS.register(ArcElement, Tooltip, Legend)
+      this.createChartData
+      this.loaded = true
     },
   };
   </script>

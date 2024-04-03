@@ -38,8 +38,7 @@ onMounted(async()=>{
 
  <template>
   <main>
-    <h1>Hola</h1>
-    <DoughnutChart :information="Values" :info1="Values.Yes" :info2="Values.No" />
+    <DoughnutChart :information="Values" :info1="Values.Yes" :info2="Values.No" :toilets="toilets" />
   </main>
 </template>
 
@@ -47,14 +46,14 @@ onMounted(async()=>{
 import DoughnutChart from "../components/DoughnutChart.vue"
 import { ref, onBeforeMount } from 'vue';
 
-const toilets = ref(getData);
+const toilets = ref();
 let loaded= false;
 async function getData() {
   let res = await fetch("https://data.cityofnewyork.us/resource/hjae-yuav.json");
   let data = await res.json();
   
-  const all= data;
-  console.log(all)
+  toilets.value= data;
+  console.log(toilets.value)
   return data
 }
 
@@ -64,6 +63,7 @@ const Values = {
 }
 onBeforeMount(async ()=>{
   let testy = await getData()
+  toilets.value = await getData()
    testy.forEach(element => {
   if (element.OpenYearRound === "Yes"){
     Values.Yes = Values.Yes+1
@@ -75,6 +75,8 @@ Values.No = Values.No+1
 }); 
 loaded = true
 })
+
+toilets.value = getData()
 </script>
 
 
