@@ -13,7 +13,7 @@
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
  
 
-  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ 
   
   export default {
     name: 'BarChart',
@@ -30,7 +30,7 @@
       return {
         chartData: {
           labels: [ 'Brooklyn', 'Staten Island', 'Bronx', 'Queens', 'Manhattan' ],
-          datasets: [ { data: [this.Brooklyn,this.StatenIsland,this.Bronx,this.Queens,this.Manhattan] } ]
+          datasets: [ { data: [this.test,this.test2,this.test3,this.test4,this.test5] } ]
         },
         chartOptions: {
           responsive: true
@@ -38,8 +38,32 @@
         loaded :false
       }
     },
-    mounted: function(){
+
+    created() {
+      this.chartData.datasets[0].data[0] = this.test
+      this.chartData.datasets[0].data[1] = this.test2
+      this.chartData.datasets[0].data[2] = this.test3
+      this.chartData.datasets[0].data[3] = this.test4
+      this.chartData.datasets[0].data[4] = this.test5
+    },
+
+    beforeUpdate(){
+      this.chartData.datasets[0].data[0] = this.test
+      this.chartData.datasets[0].data[1] = this.test2
+      this.chartData.datasets[0].data[2] = this.test3
+      this.chartData.datasets[0].data[3] = this.test4
+      this.chartData.datasets[0].data[4] = this.test5
+    },
+    
+    mounted() {
+      this.chartData.datasets[0].data[0] = this.test
+      this.chartData.datasets[0].data[1] = this.test2
+      this.chartData.datasets[0].data[2] = this.test3
+      this.chartData.datasets[0].data[3] = this.test4
+      this.chartData.datasets[0].data[4] = this.test5
+      ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
       this.loaded = true
+
      
         
         /* this.datasets[0].data.push(this.info[0]) 

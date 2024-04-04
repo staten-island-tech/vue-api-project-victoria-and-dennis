@@ -3,11 +3,11 @@
     <h1>Chart representing Amount of public toilets in each Borough</h1>
     <BarChart
      :info = "valuee" 
-     :test="valuee.Brooklyn" 
-     :test2="valuee.StatenIsland" 
-     :test3="valuee.Bronx"
-     :test4="valuee.Queens"
-     :test5="valuee.Manhattan"  />
+     :test="Brooklyn" 
+     :test2="StatenIsland" 
+     :test3="Bronx"
+     :test4="Queens"
+     :test5="Manhattan"  />
   </main>
 </template>
 
@@ -33,23 +33,29 @@ const valuee = {
   Manhattan :0,
 }
 
+const Brooklyn = ref(0)
+const StatenIsland = ref(0)
+const Bronx = ref(0)
+const Queens = ref(0)
+const Manhattan = ref(0)
+
 onBeforeMount(async ()=>{
   let test = await getData()
    test.forEach(element => {
   if (element.borough === "Brooklyn"){
-    valuee.Brooklyn = valuee.Brooklyn+1
+    Brooklyn.value++
      }
   else if(element.borough === "Staten Island"){
-    valuee.StatenIsland = valuee.StatenIsland+1
+    StatenIsland.value++
   }
   else if(element.borough === "Bronx"){
-    valuee.Bronx = valuee.Bronx+1
+    Bronx.value++
   }
   else if(element.borough === "Queens"){
-    valuee.Queens = valuee.Queens+1
+    Queens.value++
   }
   else if(element.borough === "Manhattan"){
-    valuee.Manhattan = valuee.Manhattan+1
+    Manhattan.value++
   }
 }); 
 loaded = true

@@ -59,8 +59,7 @@
   <script>
   import { Doughnut } from 'vue-chartjs';
   import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-  
-  ChartJS.register(ArcElement, Tooltip, Legend)
+
   
   export default {
     components: {Doughnut},
@@ -108,6 +107,17 @@
       },
     },
     
+    beforeUpdate(){
+      this.toilets.forEach(toilet => {
+        if (toilet.open_year_round == "Yes") {
+          this.openYearRoundCount++
+        } else {
+          this.notOpenYearRoundCount++;
+        }
+      })
+      this.chartData.datasets[0].data[0] = this.openYearRoundCount
+      this.chartData.datasets[0].data[1] = this.notOpenYearRoundCount
+    },
     mounted() {
       ChartJS.register(ArcElement, Tooltip, Legend)
       this.createChartData
